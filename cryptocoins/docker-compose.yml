@@ -9,13 +9,20 @@ services:
         volumes:
             - './backend/api:/backend/api'
         depends_on:
-            - 'db_cryptocoins'
+            - 'db_encrypted'
+            - 'db_decrypted'
 
-    db_cryptocoins:
-        container_name: 'db_cryptocoins'
+    db_encrypted:
+        container_name: 'db_encryptedcoins'
         image: mongo
         ports:
-            - "27017:27017"
+            - '27017:27017'
+
+    db_decrypted:
+        container_name: 'db_decryptedcoins'
+        image: mongo
+        ports:
+            - '27018:27018'
 
     # frontend:
     #     build: ./frontend
