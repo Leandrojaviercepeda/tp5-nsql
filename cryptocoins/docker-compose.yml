@@ -24,15 +24,15 @@ services:
         ports:
             - '27018:27018'
 
-    # frontend:
-    #     build: ./frontend
-    #     container_name: 'cryptocoins-ui'
-    #     command: sh -c 'npm install; npm start'
-    #     ports:
-    #         - '3000:3000'
-    #     volumes:
-    #         - ./frontend/cryptocoins-ui:/frontend/cryptocoins-ui
-    #     depends_on:
-    #         - "api"
-    #     stdin_open: true
-    #     tty: true
+    frontend:
+        build: ./frontend
+        container_name: 'cryptocoins-ui'
+        command: sh -c 'npm install; npm start'
+        ports:
+            - '3000:3000'
+        volumes:
+            - ./frontend/cryptocoins-ui:/frontend/cryptocoins-ui
+        depends_on:
+            - "api"
+        stdin_open: true
+        tty: true
