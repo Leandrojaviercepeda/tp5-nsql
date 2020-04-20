@@ -8,8 +8,13 @@ def connectionDB(host, port, database):
     except :
         raise
 
-_host_db_cryptocoins ='db_cryptocoins'
-_port_db_cryptocoins = 27017
-_cryptocoins = 'cryptocoins'
+_host_db_encrypted ='db_encrypted'
+_port_db_encrypted = 27017
+_encrypted = 'encrypted'
 
-db_cryptocoins = connectionDB(_host_db_cryptocoins, _port_db_cryptocoins, _cryptocoins)
+_host_db_decrypted ='db_decrypted'
+_port_db_decrypted = 27017
+_decrypted = 'decrypted'
+
+db_encrypted = connectionDB(_host_db_encrypted, _port_db_encrypted, _encrypted)
+db_decrypted = connectionDB(_host_db_decrypted, _port_db_decrypted, _decrypted)
